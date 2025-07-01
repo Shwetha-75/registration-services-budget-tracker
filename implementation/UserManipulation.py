@@ -1,8 +1,10 @@
 from models.UserModel import User
-
+import requests
 class UserManipulation:
-        def __init__(self,cursor):
-            self.cursor=cursor
+      
+        def __init__(self):
+            self.user_model={}
+            
         def insert(self,userData):
             user_data=User(
                     userData['first_name'],
@@ -11,11 +13,10 @@ class UserManipulation:
                     userData['gender'],
                     userData['password'],
                     userData['confirm_password'],
-                    userData['mail']
-            )
-            self.cursor.collection('user_model_table').document(userData['mail']).set(user_data.__str__()) 
-        def update(self,userUpdateData,email:str):
-            
-            self.cursor.collection('user_model_table').document(email).update(userUpdateData)
+                    userData['mail'])
+            self.user_model=user_data.__str__()
+           
+            return requests.post("http://localhost:7006/insert",json=user_data.__str__()).json()
+        
             
             
