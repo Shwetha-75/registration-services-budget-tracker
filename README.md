@@ -73,7 +73,7 @@
       <h4>🧱 Sequence Diagram</h4>
     </div>
     <div>
-      <img src="https://github.com/Shwetha-75/image/blob/main/SequenceDiagramBudgetTracker.jpg?raw=true" alt="Image" border="none"/>
+      <img src="https://github.com/Shwetha-75/image/blob/main/SequenceDiagramBudgetTracker.png?raw=true" alt="Image" border="none"/>
     </div>
     
   ---
